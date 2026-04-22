@@ -1,0 +1,10 @@
+^C:\USERS\NAM NGUYEN\DESKTOP\STREAM_SERVER\BUILD\CMAKEFILES\683C49694A727BE6D672A2FF364A273D\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/NAM NGUYEN/Desktop/stream_server" "-BC:/Users/NAM NGUYEN/Desktop/stream_server/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/NAM NGUYEN/Desktop/stream_server/build/PPE_Streaming_Server.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

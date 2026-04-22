@@ -1,0 +1,10 @@
+//run cmd
+ffmpeg -i "C:\Users\NAM NGUYEN\Desktop\DACN\vid\PPE_Part1.mp4" -c:v libx265 -x265-params "keyint=30:min-keyint=30:scenecut=0" -preset ultrafast -b:v 2M "C:\Users\NAM NGUYEN\Desktop\DACN\vid\PPE_Part1_HEVC.mp4"
+
+//step 2: open vlc and setup 
+
+press Ctrl + P: choose Show setting - > All -> Input/Codecs -> RTP/RTSP -> tick Use RTP over RTSP -> Save
+
+//step 3: press Ctrl + N: setup caching = 200 ~ 500 -> Play 
+
+-> video is running on VLC and start connecting with rasp to test

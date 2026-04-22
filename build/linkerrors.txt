@@ -1,0 +1,8 @@
+================================================================================
+Linker Errors
+Generated: 2026-04-22T05:24:14.830Z
+Total Errors: 1
+================================================================================
+
+[LNK1168] (MSVC)
+cannot open C:\Users\NAM NGUYEN\Desktop\stream_server\build\Debug\ppe_server.exe for writing [C:\Users\NAM NGUYEN\Desktop\stream_server\build\ppe_server.vcxproj]
