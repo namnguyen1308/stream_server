@@ -15,6 +15,7 @@
     winget install ffmpeg
     ```
   * *(Lưu ý: Sau khi cài đặt xong, hãy tắt và mở lại Terminal/VS Code để hệ thống nhận diện lệnh `ffmpeg`).*
+  * Sau khi cài xong ffmpeg, vào environment variable để edit phần Path, add new đến thư mục bin của ffmpeg
 * **VLC Media Player** (Để test trên Windows).
 
 
