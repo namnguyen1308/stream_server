@@ -9,13 +9,14 @@
 * **Compiler:** MSVC (Visual Studio 2022) hoặc MinGW.
 * **Build Tool:** CMake (phiên bản 3.10 trở lên).
 * **FFmpeg:** Dùng để tiền xử lý video.
-
-### Phía Client (Raspberry Pi/VLC)
+* **FFmpeg:** Dùng để tiền xử lý và nén video H.265.
+  * **Cách cài đặt nhanh (Trên Windows 10/11):** Mở Command Prompt (cmd) và gõ lệnh sau:
+    ```cmd
+    winget install ffmpeg
+    ```
+  * *(Lưu ý: Sau khi cài đặt xong, hãy tắt và mở lại Terminal/VS Code để hệ thống nhận diện lệnh `ffmpeg`).*
 * **VLC Media Player** (Để test trên Windows).
-* **GStreamer Core** (Cài trên Linux/Pi):
-  ```bash
-  sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav
-  ```
+
 
 ---
 
@@ -50,7 +51,7 @@ e.g: ffmpeg -i "C:\Users\NAM NGUYEN\Desktop\DACN\vid\PPE_Part1.mp4" -c:v libx265
 1. **Mở cổng Firewall:** Đảm bảo cổng **8554** đã được mở (Inbound Rule) hoặc tắt Windows Firewall.
 2. **Lấy địa chỉ IP:** Mở CMD gõ `ipconfig` để lấy IPv4 (ví dụ: `10.166.185.163`).
 3. **Chạy Server:**
-   ```Terminal
+   ```Terminalx
    cd build/Debug
    ppe_server.exe
    ```
