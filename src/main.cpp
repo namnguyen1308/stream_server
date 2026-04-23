@@ -11,7 +11,7 @@ static void on_eos(GstBus *bus, GstMessage *msg, GstElement *pipeline) {
     if (res) {
         std::cout << ">> [Replay]" << std::endl;
     } else {
-        std::cerr << ">> [Error] << std::endl;
+        std::cerr << ">> [Error]" << std::endl;
     }
 }
 
@@ -21,7 +21,7 @@ static void on_media_configure(GstRTSPMediaFactory *factory, GstRTSPMedia *media
     
     if (bus) {
         gst_bus_add_signal_watch(bus);
-       
+        
         g_signal_connect(bus, "message::eos", (GCallback)on_eos, element);
         gst_object_unref(bus);
     }
