@@ -2,8 +2,7 @@
 #include <gst/rtsp-server/rtsp-server.h>
 #include <iostream>
 
-// Hàm xử lý khi video chạy hết (EOS)
-// Hàm xử lý khi hết file
+
 static void on_eos(GstBus *bus, GstMessage *msg, GstElement *pipeline) {
     // Thực hiện lệnh quay lại vị trí 0
     gboolean res = gst_element_seek_simple(pipeline, GST_FORMAT_TIME,
@@ -22,11 +21,11 @@ static void on_media_configure(GstRTSPMediaFactory *factory, GstRTSPMedia *media
     
     if (bus) {
         gst_bus_add_signal_watch(bus);
-        // Quan trọng: Kết nối tín hiệu "message" tổng quát và lọc EOS bên trong
+       
         g_signal_connect(bus, "message::eos", (GCallback)on_eos, element);
         gst_object_unref(bus);
     }
-    // Đừng unref element ở đây nếu bạn đang dùng nó trong callback
+    
 }
 
 int main(int argc, char *argv[]) {
@@ -40,8 +39,7 @@ int main(int argc, char *argv[]) {
     GstRTSPMountPoints *mounts = gst_rtsp_server_get_mount_points(server);
     GstRTSPMediaFactory *factory = gst_rtsp_media_factory_new();
 
-    // Pipeline HEVC: Đọc file đã nén -> qtdemux -> parse -> payloader
-    // Chú ý: Bọc đường dẫn trong \" vì tên thư mục có dấu cách (NAM NGUYEN)
+    // Pipeline HEVC
     gst_rtsp_media_factory_set_launch(factory,
         "( filesrc location=\"C:/Users/NAM NGUYEN/Desktop/DACN/vid/PPE_Part1_HEVC.mp4\" ! "
         "qtdemux ! h265parse ! rtph265pay name=pay0 pt=96 config-interval=1 aggregate-mode=zero-latency mtu=1400 )");
