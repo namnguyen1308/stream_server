@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
     GstRTSPMountPoints *mounts = gst_rtsp_server_get_mount_points(server);
     GstRTSPMediaFactory *factory = gst_rtsp_media_factory_new();
 
-    // Pipeline HEVC
+    
     gst_rtsp_media_factory_set_launch(factory,
         "( filesrc location=\"C:/Users/NAM NGUYEN/Desktop/DACN/vid/PPE_Part1_HEVC.mp4\" ! "
         "qtdemux ! h265parse ! rtph265pay name=pay0 pt=96 config-interval=1 aggregate-mode=zero-latency mtu=1400 )");
