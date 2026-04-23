@@ -4,14 +4,14 @@
 
 
 static void on_eos(GstBus *bus, GstMessage *msg, GstElement *pipeline) {
-    // Thực hiện lệnh quay lại vị trí 0
+    
     gboolean res = gst_element_seek_simple(pipeline, GST_FORMAT_TIME,
         (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT), 0);
     
     if (res) {
-        std::cout << ">> [Phát lại] Video đã quay về 0s." << std::endl;
+        std::cout << ">> [Replay]" << std::endl;
     } else {
-        std::cerr << ">> [Lỗi] Không thể quay lại đầu video." << std::endl;
+        std::cerr << ">> [Error] << std::endl;
     }
 }
 
